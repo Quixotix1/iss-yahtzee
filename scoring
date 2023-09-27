@@ -5,7 +5,7 @@ public class scoring {
 
    }
    
-   public static boolean[][] updateArrays(boolean[] possible, boolean[] taken, int newTaken){
+   public static boolean[][] updateArrays(boolean[] possible, boolean[] taken, int newTaken){//clear out possible and change whatevers taken
        for (int i = 0; i < possible.length; i++){
            possible[i] = true;
        }
@@ -13,7 +13,7 @@ public class scoring {
        boolean[][] arrays = {possible, taken};
        return arrays; 
    }
-   public static int justNumbers(ArrayList<Integer> diceArray, int x){
+   public static int justNumbers(ArrayList<Integer> diceArray, int x){//ones,twos, etcetc
      int count = 0;
      for(int i = 0; i < 5; i++){
        if(diceArray[i] == x){
@@ -23,7 +23,7 @@ public class scoring {
      int score = count * x;
      return score;
    }
-   public static int checker(String x){
+   public static int checker(String x){//check between full house, etcetc
      if (x.equals("full house")){
         return 25; 
      }  
@@ -35,7 +35,7 @@ public class scoring {
      }
      return 0;
    }
-   public static int addAll(ArrayList<Integer> diceArray){
+   public static int addAll(ArrayList<Integer> diceArray){//3/4 of a kind, chance
        int score = 0;
        for(int i = 0; i < 5; i++){
            score += diceArray[i];
