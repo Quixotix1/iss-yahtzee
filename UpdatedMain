@@ -1,0 +1,44 @@
+
+package Yahtzee;
+/**
+ *
+ * @author pres1680
+ */
+public class NewMain extends Game {
+    static Game game = new Game();
+    static checker check = new checker();
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int turns = 0;
+        int playerTurn = 0;
+        
+        int[] p1Score = new int[13];
+        int[] p2Score = new int[13];
+        boolean[] p1Poss = new boolean[13];
+        boolean[] p2Poss = new boolean[13];
+        
+
+        int[][] score = {p1Score, p2Score};
+        boolean[][] taken = {p1Poss, p2Poss};
+        
+        for (int i = 0; i < 2; i++)
+        {
+            for (int j = 0; j < 13; j++)
+            {
+                score[i][j] = 0;
+                taken[i][j] = false;
+            }
+        }
+        
+        
+        while (true)
+        {
+            check.checkPossibilities(game.run());
+            
+            
+        }
+    }
+    
+}
