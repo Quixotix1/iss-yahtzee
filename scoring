@@ -23,7 +23,7 @@ public class scoring {
      int score = count * x;
      return score;
    }
-   public static int check(String x){
+   public static int checker(String x){
      if (x.equals("full house")){
         return 25; 
      }  
