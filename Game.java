@@ -114,7 +114,7 @@ public class Game {
                     System.out.printf("%d) %d%n", i + 1, heldDie.get(i));
                 }
                 
-                // get die, add to held, remove from die, if error then return
+                // get held, add to die, remove from held, if error then return
                 try {
                     int remove = Integer.parseInt(in.nextLine());
                     die.add(heldDie.get(remove - 1));
