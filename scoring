@@ -13,7 +13,7 @@ public class scoring {
        boolean[][] arrays = {possible, taken};
        return arrays; 
    }
-   public static int justNumbers(int[] diceArray, int x){
+   public static int justNumbers(ArrayList<Integer> diceArray, int x){
      int count = 0;
      for(int i = 0; i < 5; i++){
        if(diceArray[i] == x){
@@ -35,7 +35,7 @@ public class scoring {
      }
      return 0;
    }
-   public static int addAll(int[] diceArray){
+   public static int addAll(ArrayList<Integer> diceArray){
        int score = 0;
        for(int i = 0; i < 5; i++){
            score += diceArray[i];
