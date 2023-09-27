@@ -1,4 +1,4 @@
-package ics4u.yahtzee_project;
+// package ics4u.yahtzee_project;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.ArrayList;
