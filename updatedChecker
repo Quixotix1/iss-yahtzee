@@ -1,0 +1,46 @@
+package Yahtzee;
+import java.util.*;
+
+/**
+ *
+ * @author terr3890
+ */
+public class checker extends scoring{
+
+    public static void main(String[] args)
+    {
+        
+    }
+ 
+    static boolean[] checkPossibilities(ArrayList<Integer> dice) {
+        ArrayList<Integer> numVals = new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0));
+        
+        for (int roll : dice) {
+            numVals.set(roll - 1, numVals.get(roll - 1)+ 1);
+        }
+        boolean[] possible = {false, false, false, false, false, false, true, true, true, true, true ,true, true}; //first half is lower half of score card, second half of array is top half of scorecard
+        if (numVals.contains(5)) { //Yahtzee
+            possible[5] = true;
+            possible[0] = true;
+            possible[1] = true;
+        } else if (numVals.contains(4)) { //Four of a kind
+            possible[0] = true;
+            possible[1] = true;
+        } else if (numVals.contains(3)) {
+            possible[0] = true;
+            if (numVals.contains(2)) {//full house
+                possible[2] = true;
+            }
+        }
+        
+        if (numVals.get(2) >= 1 && numVals.get(3) >= 1) {
+            if ((numVals.get(0) >= 1 && (numVals.get(1) >= 1)) || (numVals.get(1) >= 1 && numVals.get(4) >= 1) || (numVals.get(4) >= 1 && numVals.get(5) >= 1)) { //small straightI think)
+                possible[3] = true; 
+                if (numVals.get(1) == 1 && numVals.get(4) == 1) { //large straight (I think)
+                    possible[4] = true;
+                }
+            }
+        }
+        return possible; //return array list with possible combinations
+    }
+}
