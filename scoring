@@ -1,6 +1,6 @@
 package Yahtzee;
 
-public class NewClass {
+public class scoring {
    public static void main(String[] args){ 
 
    }
