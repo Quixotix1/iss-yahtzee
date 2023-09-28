@@ -9,7 +9,7 @@ public class Scoring {
    
    public static boolean[][] updateArrays(boolean[] possible, boolean[] taken, int newTaken){//clear out possible and change whatevers taken
        for (int i = 0; i < possible.length; i++){
-           possible[i] = true;
+           possible[i] = false;
        }
        taken[newTaken] = false;
        boolean[][] arrays = {possible, taken};
