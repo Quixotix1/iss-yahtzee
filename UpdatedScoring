@@ -25,7 +25,7 @@ public class Scoring {
      int score = count * x;
      return score;
    }
-   public static int checker(String x){//check between full house, etcetc
+   public static int checker(String x){//check between full house, sstraight + lstraight
      if (x.equals("full house")){
         return 25; 
      }  
