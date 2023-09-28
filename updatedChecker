@@ -18,7 +18,8 @@ public class checker extends scoring{
         for (int roll : dice) {
             numVals.set(roll - 1, numVals.get(roll - 1)+ 1);
         }
-        boolean[] possible = {false, false, false, false, false, false, true, true, true, true, true ,true, true}; //first half is lower half of score card, second half of array is top half of scorecard
+        boolean[] possible = {false, false, false, false, false, false, false, false, false, false, false, false, false}; //first half is lower half of score card, second half of array is top half of scorecard
+       //3oak, 4oak, fhouse, sstraight, lstraight,yahtzee,chance, 123456
         if (numVals.contains(5)) { //Yahtzee
             possible[5] = true;
             possible[0] = true;
