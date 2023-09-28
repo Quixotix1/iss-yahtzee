@@ -18,7 +18,7 @@ public class checker extends scoring{
         for (int roll : dice) {
             numVals.set(roll - 1, numVals.get(roll - 1)+ 1);
         }
-        boolean[] possible = {false, false, false, false, false, false, false, false, false, false, false, false, false}; //first half is lower half of score card, second half of array is top half of scorecard
+        boolean[] possible = {false, false, false, false, false, false, false, false, false, false, false, false, false}; //possible scores
        //, 123456, 3oak, 4oak, fhouse, sstraight, lstraight, yahtzee, chance
         if (numVals.contains(5)) { //Yahtzee
             possible[11] = true;
@@ -40,11 +40,11 @@ public class checker extends scoring{
         }
         return possible;
         
-        if (numVals.get(2) >= 1 && numVals.get(3) >= 1) {
-            if ((numVals.get(0) >= 1 && (numVals.get(1) >= 1)) || (numVals.get(1) >= 1 && numVals.get(4) >= 1) || (numVals.get(4) >= 1 && numVals.get(5) >= 1)) { //small straightI think)
+        if (numVals.get(2) >= 1 && numVals.get(3) >= 1) {//straights
+            if ((numVals.get(0) >= 1 && (numVals.get(1) >= 1)) || (numVals.get(1) >= 1 && numVals.get(4) >= 1) || (numVals.get(4) >= 1 && numVals.get(5) >= 1)) { //small straight
                 possible[9] = true; 
             }
-            else if (numvals.get(0) == 1 && numvals.get(1) == 1 && numvals.get(4) == 1 && numvals.get(5) == 1){
+            else if (numvals.get(0) == 1 && numvals.get(1) == 1 && numvals.get(4) == 1 && numvals.get(5) == 1){// large straight
                 possible[10] = true;
             }
         }
