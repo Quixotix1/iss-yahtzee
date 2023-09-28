@@ -2,7 +2,7 @@ package Yahtzee;
 
 import java.util.ArrayList;
 
-public class scoring {
+public class Scoring {
    public static void main(String[] args){ 
 
    }
