@@ -44,14 +44,14 @@ public class Scoring {
        }
        return score;
    }
-   public static int yahtzee(int yScore){//yScore should change to the yahtzee element of the score array
-      if (yScore >= 50){//bonus
-          yScore += 100;
+   public static int yahtzee(int[] scores){//yScore should change to the yahtzee element of the score array
+      if (scores[5] >= 50){//bonus
+          scores[5] += 100;
        }
-       else if (yScore == 0){
-           yScore += 50;
+       else if (scores[5] == 0){
+           scores[5] += 50;
        }
-       return yScore;
+       return scores;
        
    }
    
