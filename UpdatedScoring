@@ -11,7 +11,7 @@ public class Scoring {
        for (int i = 0; i < possible.length; i++){
            possible[i] = false;
        }
-       taken[newTaken] = false;
+       taken[newTaken] = true;
        boolean[][] arrays = {possible, taken};
        return arrays; 
    }
