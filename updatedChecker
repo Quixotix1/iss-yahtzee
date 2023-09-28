@@ -33,6 +33,12 @@ public class checker extends scoring{
                 possible[8] = true;
             }
         }
+        for (int i = 1; i <= dice.size(); i++){//123456 check
+           if (dice.contains(i)){
+             possible[i-1] = true;
+           }
+        }
+        return possible;
         
         if (numVals.get(2) >= 1 && numVals.get(3) >= 1) {
             if ((numVals.get(0) >= 1 && (numVals.get(1) >= 1)) || (numVals.get(1) >= 1 && numVals.get(4) >= 1) || (numVals.get(4) >= 1 && numVals.get(5) >= 1)) { //small straightI think)
