@@ -43,7 +43,7 @@ public class UpdatedChecker extends Scoring{
                 possible[i] = false;
             }
         }
-        return possible;
+       
         
         if (numVals.get(2) >= 1 && numVals.get(3) >= 1) {//straights
             if ((numVals.get(0) >= 1 && (numVals.get(1) >= 1)) || (numVals.get(1) >= 1 && numVals.get(4) >= 1) || (numVals.get(4) >= 1 && numVals.get(5) >= 1)) { //small straight
