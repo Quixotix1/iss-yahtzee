@@ -26,13 +26,13 @@ public class Scoring {
      return score;
    }
    public static int checker(int x){//check between full house, sstraight + lstraight
-     if (x.equals("full house")){
+     if (x == 9){
         return 25; 
      }  
-     else if (x.equals("small straight")){
+     else if (x == 10){
         return 30;
      }
-     else if (x.equals("large straight")){
+     else if (x == 11){
         return 40; 
      }
      return 0;
