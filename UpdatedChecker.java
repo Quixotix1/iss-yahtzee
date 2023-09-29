@@ -49,7 +49,7 @@ public class UpdatedChecker extends Scoring{
             if ((numVals.get(0) >= 1 && (numVals.get(1) >= 1)) || (numVals.get(1) >= 1 && numVals.get(4) >= 1) || (numVals.get(4) >= 1 && numVals.get(5) >= 1)) { //small straight
                 possible[9] = true; 
             }
-            else if ((numvals.get(1) == 1 && numvals.get(4) == 1) && (numvals.get(0) == 1 || numvals.get(5) == 1) ){// large straight
+            else if ((numVals.get(1) == 1 && numVals.get(4) == 1) && (numVals.get(0) == 1 || numVals.get(5) == 1) ){// large straight
                 possible[10] = true;
             }
         }
