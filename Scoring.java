@@ -16,7 +16,7 @@ public class Scoring {
    public static int justNumbers(ArrayList<Integer> diceArray, int x){//ones,twos, etcetc
      int count = 0;
      for(int i = 0; i < 5; i++){
-       if(diceArray[i] == x){
+       if(diceArray.get(i) == x){
           count += 1; 
        } 
      }
@@ -38,7 +38,7 @@ public class Scoring {
    public static int addAll(ArrayList<Integer> diceArray){//3/4 of a kind, chance
        int score = 0;
        for(int i = 0; i < 5; i++){
-           score += diceArray[i];
+           score += diceArray.get(i);
        }
        return score;
    }
