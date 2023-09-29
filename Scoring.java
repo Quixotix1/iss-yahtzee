@@ -24,13 +24,13 @@ public class Scoring {
      return score;
    }
    public static int checker(int x){//check between full house, etcetc
-     if (x == 9){//check these numbers bc changes had to be made **************DELETE THIS COMMENT*******************
+     if (x == 8){
         return 25; 
      }  
-     else if (x == 10){
+     else if (x == 9){
         return 30;
      }
-     else if (x == 11){
+     else if (x == 10){
         return 40; 
      }
      return 0;
