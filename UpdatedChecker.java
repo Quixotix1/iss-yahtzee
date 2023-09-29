@@ -5,7 +5,7 @@ import java.util.*;
  *
  * @author terr3890
  */
-public class checker extends Scoring{
+public class UpdatedChecker extends Scoring{
 
     public static void main(String[] args)
     {
