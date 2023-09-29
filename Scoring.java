@@ -1,6 +1,6 @@
 package Yahtzee;
 
-public class scoring {
+public class Scoring {
    public static void main(String[] args){ 
 
    }
@@ -23,14 +23,14 @@ public class scoring {
      int score = count * x;
      return score;
    }
-   public static int checker(String x){//check between full house, etcetc
-     if (x.equals("full house")){
+   public static int checker(int x){//check between full house, etcetc
+     if (x == 9){//check these numbers bc changes had to be made **************DELETE THIS COMMENT*******************
         return 25; 
      }  
-     else if (x.equals("small straight")){
+     else if (x == 10){
         return 30;
      }
-     else if (x.equals("large straight")){
+     else if (x == 11){
         return 40; 
      }
      return 0;
@@ -42,14 +42,14 @@ public class scoring {
        }
        return score;
    }
-   public static int yahtzee(int yScore){//yScore should change to the yahtzee element of the score array
-      if (yScore >= 50){//bonus
-          yScore += 100;
+   public static int[] yahtzee(int scores[]){//yScore should change to the yahtzee element of the score array
+      if (scores[11] >= 50){//bonus
+          scores[11] += 100;
        }
-       else if (yScore == 0){
-           yScore += 50;
+       else if (scores[11] == 0){
+           scores[11] += 50;
        }
-       return yScore;
+       return scores;
        
    }
    
