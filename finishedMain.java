@@ -6,6 +6,7 @@ import java.util.Scanner;
  *
  * @author pres1680
  */
+
 public class Main extends Game {
     static Game game = new Game();
     static Checker check = new Checker();
@@ -14,6 +15,7 @@ public class Main extends Game {
     static int[] p1Score = new int[13];//why
     static int[] p2Score = new int[13];//why
     static int[][] score = {p1Score, p2Score};//why
+    static boolean noYahtzee = false;
     
     static boolean[] p1Taken = new boolean[13];
     static boolean[] p2Taken = new boolean[13];
@@ -50,7 +52,7 @@ public class Main extends Game {
             {
                System.out.println("Player 1");
                dice = game.run();
-               p1Poss = check.checkPossibilities(dice, taken[0]);
+               p1Poss = check.checkPossibilities(dice, taken[0], noYahtzee);
                taken[0] = finishTurn(p1Poss, score[0], dice, taken[0]);
                //scoreThing.updateArrays(p1Poss);
                turns += 1;
@@ -60,7 +62,7 @@ public class Main extends Game {
             {
                 System.out.println("Player 2");
                 dice = game.run();
-                p2Poss = check.checkPossibilities(dice, taken[1]);
+                p2Poss = check.checkPossibilities(dice, taken[1], noYahtzee);
                 taken[1] = finishTurn(p2Poss, score[1], dice, taken[1]);
                 //scoreThing.updateArrays(p2Poss);
                 turns += 1;
@@ -207,9 +209,13 @@ public class Main extends Game {
                 scanner.nextLine();
                 System.out.println("Please enter a valid decision");
             }
-            score[decision] = 0;
         }
+        score[decision] = 0;
         taken[decision] = true;//make sure that what they've chosen is now not possible
+        if (decision == 11)
+        {
+            noYahtzee = true;
+        }
         clearScreen();
         return taken;
     }
