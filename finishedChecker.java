@@ -1,4 +1,4 @@
-package com.mycompany.yahtzee.kateYahtzee;
+package com.mycompany.yahtzee;
 
 import java.util.*;
 import java.util.ArrayList;
