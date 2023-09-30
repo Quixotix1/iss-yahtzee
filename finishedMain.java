@@ -1,5 +1,4 @@
-
-package com.mycompany.yahtzee.kateYahtzee;
+package com.mycompany.yahtzee;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -7,15 +6,14 @@ import java.util.Scanner;
  *
  * @author pres1680
  */
-public class UpdatedMain extends Game {
+public class Main extends Game {
     static Game game = new Game();
     static Checker check = new Checker();
     static Scoring scoreThing = new Scoring();
-    static int playerTurn = 0; //0 indicates player one's turn
     
-    static int[] p1Score = new int[13];
-    static int[] p2Score = new int[13];
-    static int[][] score = {p1Score, p2Score};
+    static int[] p1Score = new int[13];//why
+    static int[] p2Score = new int[13];//why
+    static int[][] score = {p1Score, p2Score};//why
     
     static boolean[] p1Taken = new boolean[13];
     static boolean[] p2Taken = new boolean[13];
@@ -71,7 +69,7 @@ public class UpdatedMain extends Game {
             
             
         }
-        
+        clearScreen();
         System.out.println("Game Over! Lets see the scores...");//print out final results and declare winner
         //player 1
         //top
@@ -134,7 +132,8 @@ public class UpdatedMain extends Game {
     {
         Scanner scanner = new Scanner(System.in);
         String[] options = {"ones","twos","threes","fours","fives","sixes","Three Of A Kind","Four Of A Kind","Full House(3 of one #, 2 of another)","Small Straight(4 #'s in a row)","Large Straight(5 #'s in a row)","Yahtzee(pick me!)","Chance(add up all the dice)"}; 
-        int decision;
+        int decision = 0;
+        ArrayList<Integer> validDecision = new ArrayList<Integer>();
         
         
         
@@ -143,14 +142,31 @@ public class UpdatedMain extends Game {
         System.out.println("Select one: ");
         for (int i = 0; i < possibilities.length; i++){
             if (possibilities[i] == true){
-                System.out.print("\n" +  (i + 1) + ": " + options[i]);
+                System.out.print((i + 1) + ": " + options[i] + "\n");
+                validDecision.add(i); 
             }
             else {
                 ifNone += 1;
             }
         }
         if (ifNone < 13){
-            decision = scanner.nextInt() - 1;
+            
+            while (true) //loops until a valid decision has been entered
+            {
+                if (scanner.hasNextInt())
+                {
+                    decision = scanner.nextInt() - 1;
+                    
+                    if (validDecision.contains(decision))
+                    {
+                        break;
+                    }
+                }
+                scanner.nextLine();
+                System.out.println("Please enter a valid decision");
+            }
+            validDecision.clear();
+            
 
             if (decision < 6) //123456
             {
@@ -174,13 +190,35 @@ public class UpdatedMain extends Game {
             for (int i = 0; i < taken.length; i++){
               if (taken[i] == false){
                   System.out.println((i + 1) + ": " + options[i]);
+                  validDecision.add(i);
               }  
             }
-            decision = scanner.nextInt() - 1;
+            
+            while (true)
+            {
+                if (scanner.hasNextInt())
+                {
+                    decision = scanner.nextInt() - 1;
+                    if (validDecision.contains(decision))
+                    {
+                        break;
+                    }
+                }
+                scanner.nextLine();
+                System.out.println("Please enter a valid decision");
+            }
             score[decision] = 0;
         }
         taken[decision] = true;//make sure that what they've chosen is now not possible
+        clearScreen();
         return taken;
     }
     
+    public static void clearScreen()
+    {
+        for (int i = 0; i < 10; i++) //totally legit console clear (other methods don't work in netbeans)
+        {
+            System.out.println();
+        }
+    }
 }
