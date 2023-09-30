@@ -13,9 +13,9 @@ public class UpdatedMain extends Game {
     static Scoring scoreThing = new Scoring();
     static int playerTurn = 0; //0 indicates player one's turn
     
-    static int[] p1Score = new int[13];//why
-    static int[] p2Score = new int[13];//why
-    static int[][] score = {p1Score, p2Score};//why
+    static int[] p1Score = new int[13];
+    static int[] p2Score = new int[13];
+    static int[][] score = {p1Score, p2Score};
     
     static boolean[] p1Taken = new boolean[13];
     static boolean[] p2Taken = new boolean[13];
