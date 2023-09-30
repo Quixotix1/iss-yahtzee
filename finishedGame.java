@@ -135,4 +135,24 @@ public class Game extends Checker {
                     System.out.println("Error: No dice being held");
                     break;
                 }
- *
+                System.out.println("Which dice would you like to let go of?");
+                for(int i = 0; i < heldDie.size(); i++) {
+                    System.out.printf("%d) %d%n", i + 1, heldDie.get(i));
+                }
+                
+                // get die, add to held, remove from die, if error then return
+                try {
+                    int remove = Integer.parseInt(in.nextLine());
+                    die.add(heldDie.get(remove - 1));
+                    heldDie.remove(remove - 1);
+                } catch(NumberFormatException e) {
+                    System.out.println("Input not received successfully.");
+                }
+                break;
+            }
+            default -> {
+                return;
+            }
+        }
+    }
+}
