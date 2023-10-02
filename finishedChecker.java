@@ -56,6 +56,10 @@ public class Checker extends Scoring{
                 if (taken[i] == true){
                     possible[i] = false;
                 }
+                else if (noYahtzee)
+                {
+                    possible[i] = false;
+                }
             }
         }
         
