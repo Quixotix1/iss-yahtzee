@@ -13,7 +13,7 @@ public class Checker extends Scoring{
         
     }
  
-    static boolean[] checkPossibilities(ArrayList<Integer> dice, boolean[] taken) {
+    static boolean[] checkPossibilities(ArrayList<Integer> dice, boolean[] taken, boolean noYahtzee) {
         ArrayList<Integer> numVals = new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0));
         
         for (int roll : dice) {
