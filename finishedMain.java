@@ -12,9 +12,9 @@ public class Main extends Game {
     static Checker check = new Checker();
     static Scoring scoreThing = new Scoring();
     
-    static int[] p1Score = new int[13];//why
-    static int[] p2Score = new int[13];//why
-    static int[][] score = {p1Score, p2Score};//why
+    static int[] p1Score = new int[13];
+    static int[] p2Score = new int[13];
+    static int[][] score = {p1Score, p2Score};
     static boolean noYahtzee = false;
     
     static boolean[] p1Taken = new boolean[13];
@@ -54,7 +54,6 @@ public class Main extends Game {
                dice = game.run();
                p1Poss = check.checkPossibilities(dice, taken[0], noYahtzee);
                taken[0] = finishTurn(p1Poss, score[0], dice, taken[0]);
-               //scoreThing.updateArrays(p1Poss);
                turns += 1;
                playerTurn = 1;
             }
@@ -64,7 +63,7 @@ public class Main extends Game {
                 dice = game.run();
                 p2Poss = check.checkPossibilities(dice, taken[1], noYahtzee);
                 taken[1] = finishTurn(p2Poss, score[1], dice, taken[1]);
-                //scoreThing.updateArrays(p2Poss);
+               
                 turns += 1;
                 playerTurn = 0;
             }
@@ -138,8 +137,7 @@ public class Main extends Game {
         ArrayList<Integer> validDecision = new ArrayList<Integer>();
         
         
-        
-        //remember to account for the 0 case
+       //if they have nothing
         int ifNone = 0;
         System.out.println("Select one: ");
         for (int i = 0; i < possibilities.length; i++){
