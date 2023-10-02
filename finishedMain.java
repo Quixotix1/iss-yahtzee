@@ -77,9 +77,7 @@ public class Main extends Game {
         System.out.println("Player 1: \n1 - " + score[0][0] + "\n2 - " + score[0][1] + "\n3 - " + score[0][2] + "\n4 - " + score[0][3] + "\n5 - " + score[0][4] + "\n6 - " + score[0][5]);
         int p1TopTotal = (score[0][0] + score[0][1] + score[0][2] + score[0][3] + score[0][4] + score[0][5]);
         System.out.println("Total: " + p1TopTotal);
-        boolean bonus = false;
         if (p1TopTotal >= 63){
-           bonus = true;
            System.out.println("Bonus: 35");
            System.out.println("Total: " + (p1TopTotal + 35));
         }
@@ -100,9 +98,7 @@ public class Main extends Game {
         System.out.println("\nPlayer 2: \n1 - " + score[1][0] + "\n2 - " + score[1][1] + "\n3 - " + score[1][2] + "\n4 - " + score[1][3] + "\n5 - " + score[1][4] + "\n6 - " + score[1][5]);
         int p2TopTotal = (score[1][0] + score[1][1] + score[1][2] + score[1][3] + score[1][4] + score[1][5]);
         System.out.println("Total: " + p2TopTotal);
-        bonus = false;
         if (p2TopTotal >= 63){
-           bonus = true;
            System.out.println("Bonus: 35");
            System.out.println("Total: " + (p2TopTotal + 35));
         }
